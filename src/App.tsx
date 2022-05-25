@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <>
+  <header>
+    <h1>React + TS Todo</h1>
+  </header>
+  <h1>Conteúdo...</h1>
+  <footer>
+    <p>
+      <span>React + TS Todo</span> @ 2021
+    </p>
+  </footer>
+  </>)
 }
 
 export default App;
