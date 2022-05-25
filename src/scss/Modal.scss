@@ -1,0 +1,33 @@
+@import '../scss/Global.scss';
+
+.fade {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: $colorBlack;
+  opacity: 0.3;
+}
+
+.modal{
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  z-index: 1;
+  background-color: $colorWhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  h2{
+    margin-bottom: 1em;
+  }
+
+  form{
+    width: 90%;
+  }
+}

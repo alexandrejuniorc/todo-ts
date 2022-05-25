@@ -8,9 +8,11 @@ import TaskList from './components/TaskList';
 import './scss/App.scss';
 // interface
 import { ITask } from './interfaces/Task';
+import Modal from './components/Modal';
 
 function App() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
+  const [taskToUpdate, setTaskToUpdate] = useState<ITask | null>(null);
 
   // function that excludes a task, it will return all ids that are not equal to the id that was filtered, thus excluding the id
   const deleteTask = (id: number) => {
@@ -21,8 +23,44 @@ function App() {
     );
   };
 
+  const hideOrShowModal = (display: boolean) => {
+    const modal = document.getElementById('modal');
+    if (display) {
+      modal!.classList.remove('hide'); // if it comes as true it will remove the hide class that has display none
+    } else {
+      modal!.classList.add('hide');
+    }
+  };
+
+  const editTask = (task: ITask): void => {
+    hideOrShowModal(true);
+    setTaskToUpdate(task);
+  };
+
+  const updateTask = (id: number, title: string, difficulty: number) => {
+    const updatedTask: ITask = { id, title, difficulty };
+
+    const updatedItems = taskList.map((task) => {
+      return task.id === updatedTask.id ? updatedTask : task;
+    });
+
+    setTaskList(updatedItems);
+
+    hideOrShowModal(false);
+  };
+
   return (
     <>
+      <Modal
+        children={
+          <TaskForm
+            btnText="Editar Tarefa"
+            taskList={taskList}
+            task={taskToUpdate}
+            handleUpdate={updateTask}
+          />
+        }
+      />
       <Header />
       <main className="main">
         <div>
@@ -35,7 +73,11 @@ function App() {
         </div>
         <div>
           <h2>Suas tarefas:</h2>
-          <TaskList taskList={taskList} handleDelete={deleteTask} />
+          <TaskList
+            taskList={taskList}
+            handleDelete={deleteTask}
+            handleEdit={editTask}
+          />
         </div>
       </main>
       <Footer />
