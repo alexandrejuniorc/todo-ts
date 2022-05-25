@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alexandrejuniorc/todo-ts/static/css/main.20762eed.css",
+    "main.js": "/alexandrejuniorc/todo-ts/static/js/main.4ad8c683.js",
+    "index.html": "/alexandrejuniorc/todo-ts/index.html",
+    "main.20762eed.css.map": "/alexandrejuniorc/todo-ts/static/css/main.20762eed.css.map",
+    "main.4ad8c683.js.map": "/alexandrejuniorc/todo-ts/static/js/main.4ad8c683.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20762eed.css",
+    "static/js/main.4ad8c683.js"
+  ]
+}
