@@ -12,6 +12,15 @@ import { ITask } from './interfaces/Task';
 function App() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
 
+  // function that excludes a task, it will return all ids that are not equal to the id that was filtered, thus excluding the id
+  const deleteTask = (id: number) => {
+    setTaskList(
+      taskList.filter((task) => {
+        return task.id !== id;
+      }),
+    );
+  };
+
   return (
     <>
       <Header />
@@ -26,7 +35,7 @@ function App() {
         </div>
         <div>
           <h2>Suas tarefas:</h2>
-          <TaskList />
+          <TaskList taskList={taskList} handleDelete={deleteTask} />
         </div>
       </main>
       <Footer />

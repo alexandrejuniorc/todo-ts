@@ -1,1 +1,40 @@
 @import './Global.scss';
+
+.task {
+  display: flex;
+  justify-content: space-between ;
+  max-width: 400px;
+  margin: 0 auto;
+  border-bottom: 1px solid $colorWhit2;
+  padding: 1em;
+}
+
+.details{
+  text-align: left;
+
+  h4{
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+.actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  i{
+    margin-bottom: .5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: $colorInput;
+    color: $colorWhite;
+    padding: .4em;
+    transition: .5s;
+
+    &:hover{
+      color: $colorText;
+    }
+  }
+}
