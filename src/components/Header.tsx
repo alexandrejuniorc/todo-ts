@@ -1,10 +1,12 @@
-import React from 'react'
-import  '../scss/Header.scss'
+import React from 'react';
+import '../scss/Header.scss';
 
 const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <header className="header">
+      <h1>React + TS Todo</h1>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

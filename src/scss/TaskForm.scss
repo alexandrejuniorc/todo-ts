@@ -1,0 +1,39 @@
+@import './Global.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+
+  input{
+    padding: 8px 15px;
+    margin-bottom: 1.5em;
+    border-radius: 0;
+    border: 1px solid $colorInput;
+  }
+
+  input[type='submit']{
+    background-color: $colorText;
+    border: 1px solid $colorText;
+    color: $colorBlack;
+    transition: .5s;
+    cursor: pointer;
+
+    &:hover{
+      background-color: $colorWhite;
+      border-color: $colorInput;
+    }
+  }
+}
+
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  label{
+    font-weight: bold;
+    margin-bottom: 0.4em;
+  }
+}
